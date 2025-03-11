@@ -1,0 +1,4 @@
+#ifndef FINDFILEDIALOG_H
+#define FINDFILEDIALOG_H
+
+#endif // FINDFILEDIALOG_H
