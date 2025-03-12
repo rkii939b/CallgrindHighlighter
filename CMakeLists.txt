@@ -1,4 +1,4 @@
-
+cmake_minimum_required(VERSION 3.16)
 project(simpletextviewer LANGUAGES CXX)
 
 cmake_minimum_required(VERSION 3.16)
