@@ -1,10 +1,10 @@
+# Copyright (C) 2022 The Qt Company Ltd.
+# SPDX-License-Identifier: LicenseRef-Qt-Commercial OR BSD-3-Clause
+
 cmake_minimum_required(VERSION 3.16)
 project(simpletextviewer LANGUAGES CXX)
 
-cmake_minimum_required(VERSION 3.16)
 set(CMAKE_AUTOMOC ON)
-set(SOURCES mainwindow.cpp main.cpp)
-set(HEADERS mainwindow.h)
 
 if(NOT DEFINED INSTALL_EXAMPLESDIR)
     set(INSTALL_EXAMPLESDIR "examples")
