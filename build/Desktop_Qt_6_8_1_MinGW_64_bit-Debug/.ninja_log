@@ -1,0 +1,17 @@
+# ninja log v6
+32	207	7635272414005041	simpletextviewer_autogen/timestamp	b7a169d5e57d0800
+2645	9455	7635248996379943	CMakeFiles/simpletextviewer.dir/mainwindow.cpp.obj	8a080ad6a0ba1f66
+32	207	7635272414005041	E:/Projects/simpleTextViewer/CallgrindHighlighter/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/simpletextviewer_autogen/timestamp	b7a169d5e57d0800
+32	207	7635272414005041	simpletextviewer_autogen/mocs_compilation.cpp	b7a169d5e57d0800
+208	3728	7635272415763960	CMakeFiles/simpletextviewer.dir/findfiledialog.cpp.obj	cb5ef29dba77e18c
+2634	9505	7635248996270055	CMakeFiles/simpletextviewer.dir/simpletextviewer_autogen/mocs_compilation.cpp.obj	6935d667f253af32
+32	207	7635272414005041	E:/Projects/simpleTextViewer/CallgrindHighlighter/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/simpletextviewer_autogen/mocs_compilation.cpp	b7a169d5e57d0800
+2653	9625	7635248996459874	CMakeFiles/simpletextviewer.dir/callgrindhighlighter.cpp.obj	46cf5a2579b65353
+2649	9663	7635248996419899	CMakeFiles/simpletextviewer.dir/textedit.cpp.obj	e83b259e222883c8
+2642	8120	7635248996349972	CMakeFiles/simpletextviewer.dir/main.cpp.obj	af0d2878f4328330
+189	3834	7635243784344156	CMakeFiles/simpletextviewer.dir/assistant.cpp.obj	2c4c7e8080b4b95a
+3728	4228	7635272450962436	simpletextviewer.exe	9d5ea5de0a2edee8
+46	322	7636119193760362	simpletextviewer_autogen/timestamp	b7a169d5e57d0800
+46	322	7636119193760362	simpletextviewer_autogen/mocs_compilation.cpp	b7a169d5e57d0800
+46	322	7636119193760362	E:/Projects/simpleTextViewer/CallgrindHighlighter/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/simpletextviewer_autogen/timestamp	b7a169d5e57d0800
+46	322	7636119193760362	E:/Projects/simpleTextViewer/CallgrindHighlighter/build/Desktop_Qt_6_8_1_MinGW_64_bit-Debug/simpletextviewer_autogen/mocs_compilation.cpp	b7a169d5e57d0800
