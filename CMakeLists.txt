@@ -21,7 +21,6 @@ qt_add_executable(simpletextviewer
     textedit.cpp textedit.h
     callgrindhighlighter.h
     callgrindhighlighter.cpp
-
 )
 
 set_target_properties(simpletextviewer PROPERTIES
