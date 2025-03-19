@@ -1,9 +1,9 @@
 Instruction:
--Download QT Creator
--Download all the files including doc and build folders
--Open the QT Creator GUI
--Place the callgrind files in any location of your hard drive to for testing. 
--Find the "Build" button and Run from the QT. The simpleTextViewer will appear which has a unique feature to highlight callgrind files from your local disk. 
+1. Download QT Creator
+2. Download all the files including doc and build folders
+3. Open the QT Creator GUI
+4. Place the callgrind files in any location of your hard drive to for testing. 
+5. Find the "Build" button and Run from the QT. The simpleTextViewer will appear which has a unique feature to highlight callgrind files from your local disk. 
  It can also highlight the text based on the format of event types.
 
   For Example:
