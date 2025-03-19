@@ -9,18 +9,20 @@ TextEdit::TextEdit(QWidget *parent)
     setReadOnly(true);
 }
 
-void TextEdit::setContents(const QString &fileName)
+void TextEdit::setContents(const QString &fileName, bool enableHighlighting)
 {
     // Clear existing content and highlighter
     clear();
-    delete m_highlighter;
-    m_highlighter = nullptr;
+    if (m_highlighter) {
+        delete m_highlighter;
+        m_highlighter = nullptr;
+    }
 
     QFileInfo fi(fileName);
     srcUrl = QUrl::fromLocalFile(fi.absoluteFilePath());
 
-    if (fileName.endsWith(".callgrind", Qt::CaseInsensitive) ||
-        fileName.contains("callgrind.out")) {
+    if (enableHighlighting && (fileName.endsWith(".callgrind", Qt::CaseInsensitive) ||
+                               fileName.contains("callgrind.out"))) {
         qDebug() << "Initializing Callgrind highlighter for:" << fileName;
         m_highlighter = new CallgrindSyntaxHighlighter(document());
     }
@@ -36,6 +38,15 @@ void TextEdit::setContents(const QString &fileName)
     }
 
     emit fileNameChanged(fileName);
+}
+
+void TextEdit::clearHighlighter()
+{
+    // Delete the highlighter if it exists
+    if (m_highlighter) {
+        delete m_highlighter;
+        m_highlighter = nullptr;
+    }
 }
 
 QVariant TextEdit::loadResource(int type, const QUrl &name)
