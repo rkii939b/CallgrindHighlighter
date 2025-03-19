@@ -20,9 +20,9 @@ MainWindow::MainWindow()
     : textViewer(new TextEdit)
     , assistant(new Assistant)
 {
-    // ![0]
+// ![0]
     textViewer->setContents(QLibraryInfo::path(QLibraryInfo::ExamplesPath)
-                            + "/assistant/simpletextviewer/documentation/intro.html"_L1);
+                            + "/assistant/simpletextviewer/documentation/intro.html"_L1, false);
     setCentralWidget(textViewer);
 
     createActions();
@@ -32,7 +32,7 @@ MainWindow::MainWindow()
     resize(750, 400);
 
     connect(textViewer, &TextEdit::fileNameChanged, this, &MainWindow::updateWindowTitle);
-    // ![1]
+// ![1]
 }
 //! [1]
 
@@ -52,8 +52,8 @@ void MainWindow::about()
 {
     QMessageBox::about(this, tr("About Simple Text Viewer"),
                        tr("This example demonstrates how to use\n"
-                          "Qt Assistant as help system for your\n"
-                          "own application."));
+                          "Qt Assistant as help system for your own application \n"
+                          "also it can detect callgrind files in highlight by checkbox for disabling and enabling."));
 }
 
 //! [3]
@@ -75,7 +75,7 @@ void MainWindow::createActions()
     assistantAct = new QAction(tr("Help Contents"), this);
     assistantAct->setShortcut(QKeySequence::HelpContents);
     connect(assistantAct, &QAction::triggered, this, &MainWindow::showDocumentation);
-    //! [4]
+//! [4]
 
     openAct = new QAction(tr("&Open..."), this);
     openAct->setShortcut(QKeySequence::Open);
@@ -94,7 +94,7 @@ void MainWindow::createActions()
 
     aboutQtAct = new QAction(tr("About &Qt"), this);
     connect(aboutQtAct, &QAction::triggered, QApplication::aboutQt);
-    //! [5]
+//! [5]
 }
 //! [5]
 
