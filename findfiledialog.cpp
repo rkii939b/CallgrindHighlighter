@@ -65,7 +65,12 @@ void FindFileDialog::openFile()
     const QString fileName = item->text(0);
     const QString path = QDir(directoryComboBox->currentText()).filePath(fileName);
 
-    currentEditor->setContents(path);
+    bool enableHighlighting = highlightCheckBox->isChecked();
+    currentEditor->setContents(path, enableHighlighting);
+    if (!highlightCheckBox->isChecked()) {
+        currentEditor->clearHighlighter();
+    }
+
     close();
 }
 
@@ -103,8 +108,13 @@ void FindFileDialog::showFiles(const QStringList &files)
 
         // Highlight Callgrind files
         if (file.contains("callgrind.out")) {
-            item->setBackground(0, QBrush(Qt::green));  // Set yellow highlight
+            item->setBackground(0, QBrush(Qt::green));// Set green highlight
 
+            if (highlightCheckBox->isChecked() && file.contains("callgrind.out")) {
+                item->setBackground(0, QBrush(Qt::green));
+            } else {
+                item->setBackground(0, QBrush(Qt::transparent)); // Remove highlighting
+            }
         }
     }
 
@@ -125,6 +135,10 @@ void FindFileDialog::createButtons()
     connect(buttonBox, &QDialogButtonBox::accepted, this, &FindFileDialog::openFile);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
     connect(buttonBox, &QDialogButtonBox::helpRequested, this, &FindFileDialog::help);
+
+    highlightCheckBox = new QCheckBox(tr("Enable Callgrind Highlighting"));
+    highlightCheckBox->setChecked(true); // Default enabled
+    connect(highlightCheckBox, &QCheckBox::toggled, this, &FindFileDialog::toggleHighlighting);
 }
 
 void FindFileDialog::createComboBoxes()
@@ -175,7 +189,12 @@ void FindFileDialog::createLayout()
     mainLayout->addLayout(fileLayout);
     mainLayout->addLayout(directoryLayout);
     mainLayout->addWidget(foundFilesTree);
+    mainLayout->addWidget(highlightCheckBox);
     mainLayout->addStretch();
     mainLayout->addWidget(buttonBox);
     setLayout(mainLayout);
+}
+void FindFileDialog::toggleHighlighting()
+{
+    update(); // Refresh the file list when the checkbox is toggled
 }
