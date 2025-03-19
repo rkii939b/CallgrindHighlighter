@@ -9,7 +9,8 @@ class TextEdit : public QTextEdit
     Q_OBJECT
 public:
     explicit TextEdit(QWidget *parent = nullptr);
-    void setContents(const QString &fileName);
+    void setContents(const QString &fileName, bool enableHighlighting);
+    void clearHighlighter();  // Declare the clearHighlighter() method
 
 signals:
     void fileNameChanged(const QString &fileName);
